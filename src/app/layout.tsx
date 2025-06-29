@@ -20,6 +20,9 @@ const libre = Libre_Baskerville({
 export const metadata: Metadata = {
   title: "MyBook Collection",
   description: "A collection of book summaries and articles",
+  icons: {
+    icon: "/logo.png",
+  }
 };
 
 export default function RootLayout({
