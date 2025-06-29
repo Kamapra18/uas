@@ -16,7 +16,11 @@ type ModalFormProps = {
   };
 };
 
-export default function ModalForm({ onClose, onBookAdded, bookData }: ModalFormProps) {
+export default function ModalForm({
+  onClose,
+  onBookAdded,
+  bookData,
+}: ModalFormProps) {
   const [judul, setJudul] = useState("");
   const [penulis, setPenulis] = useState("");
   const [genre, setGenre] = useState("");
@@ -101,19 +105,25 @@ export default function ModalForm({ onClose, onBookAdded, bookData }: ModalFormP
             required
             className="w-full border border-gray-300 focus:border-[#FF8A00] focus:ring-[#FF8A00] p-3 rounded-md transition outline-none"
           />
-
+          {/* <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) setCoverFile(file);
+            }}
+            className="w-full border p-3 rounded-md"
+          /> */}
           <div className="flex justify-end gap-3 pt-4">
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 transition"
-            >
+              className="px-5 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 transition">
               Batal
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-md bg-[#FF8A00] text-white hover:bg-orange-600 transition"
-            >
+              className="px-5 py-2 rounded-md bg-[#FF8A00] text-white hover:bg-orange-600 transition">
               {bookData ? "Update" : "Tambah"}
             </button>
           </div>
